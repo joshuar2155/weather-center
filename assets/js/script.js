@@ -78,3 +78,57 @@ function currentWeather(city){
  
      });
  }
+
+ function UVIndex(ln,lt){
+    
+    var uvqURL=""+ APIKey+""+lt+""+ln;
+    $.ajax({
+            url:uvqURL,
+            method:"GET"
+            }).then(function(response){
+                $(currentUvindex).html(response.value);
+            });
+}
+    
+
+function forecast(cityid){
+    var dayover= false;
+    var queryforcastURL=""+cityid+""+APIKey;
+    $.ajax({
+        url:queryforcastURL,
+        method:"GET"
+    }).then(function(response){
+        
+        for (i=0;i<5;i++){
+            var date= new Date((response.list[((i+1)*8)-1].dt)*1000).toLocaleDateString();
+            var iconcode= response.list[((i+1)*8)-1].weather[0].icon;
+            var iconurl=""+iconcode+".png";
+            var tempK= response.list[((i+1)*8)-1].main.temp;
+            var tempF=(((tempK-273.5)*1.80)+32).toFixed(2);
+            var humidity= response.list[((i+1)*8)-1].main.humidity;
+        
+            $("#fDate"+i).html(date);
+            $("#fImg"+i).html("<img src="+iconurl+">");
+            $("#fTemp"+i).html(tempF+"&#8457");
+            $("#fHumidity"+i).html(humidity+"%");
+        }
+        
+    });
+}
+
+
+function addToList(c){
+    var listEl= $("<li>"+c.toUpperCase()+"</li>");
+    $(listEl).attr("class","list-group-item");
+    $(listEl).attr("data-value",c.toUpperCase());
+    $(".list-group").append(listEl);
+}
+
+function invokePastSearch(event){
+    var liEl=event.target;
+    if (event.target.matches("li")){
+        city=liEl.textContent.trim();
+        currentWeather(city);
+    }
+
+}
