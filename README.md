@@ -2,26 +2,19 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+This project is to catch current weather data using APIs and javascript functions.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+- My motivation for this project was to work on utilizing different APIs
+- I built this project to demonstrate weather APIs and utilizing keys
+- This project solves usages of fetching weather data and storign local data.
+- I learned how to use a more in depth site to develop more complex javascript. 
 
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
 ## Usage
+Search for cities to see certain stats about their real -time weather conditions. 
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+!
+    ![This Screenshot shows the website in use](assets/images/website4.png)
 
 ## Credits
 
@@ -51,4 +44,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+# Link
 
+https://github.com/joshuar2155/weather-center

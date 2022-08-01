@@ -1,3 +1,6 @@
+//Cities and Variables
+
+
 var city="";
 
 var searchCity = $("#search-city");
@@ -10,6 +13,7 @@ var currentWSpeed=$("#wind-speed");
 var currentUvindex= $("#uv-index");
 var sCity=[];
 
+//Search City
 function find(c){
     for (var i=0; i<sCity.length; i++){
         if(c.toUpperCase()===sCity[i]){
@@ -18,7 +22,7 @@ function find(c){
     }
     return 1;
 }
-
+//API  Key
 var APIKey="";
 
 function displayWeather(event){
@@ -29,7 +33,8 @@ function displayWeather(event){
     }
 }
 function currentWeather(city){
-    
+
+//Query for URL
     var queryURL= "" + city + "" + APIKey;
     $.ajax({
         url:queryURL,
@@ -79,6 +84,7 @@ function currentWeather(city){
      });
  }
 
+ //UV Index
  function UVIndex(ln,lt){
     
     var uvqURL=""+ APIKey+""+lt+""+ln;
@@ -116,7 +122,7 @@ function forecast(cityid){
     });
 }
 
-
+//Attempt at lists
 function addToList(c){
     var listEl= $("<li>"+c.toUpperCase()+"</li>");
     $(listEl).attr("class","list-group-item");
